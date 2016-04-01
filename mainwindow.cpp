@@ -108,14 +108,12 @@ void MainWindow::setFilename(QString filename) {
         close();
         return;
     } else f.close();
-    qDebug() << filename << " was readable, setting.";
     ui->lineEdit->setText(filename);
     repaint();
 }
 
 void MainWindow::on_actionOpen_triggered()
 {
-    qDebug() << "Open Clicked!";
     QFileDialog *fd = new QFileDialog();
     QString filename = fd->getOpenFileName();
     if(filename.trimmed().isEmpty()) return;
